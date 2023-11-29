@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="init">
+    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Feat:: Blog-findAll &amp; testcode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/controller/BlogApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/controller/BlogApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/service/BlogService.java" afterDir="false" />
@@ -283,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701099747626</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Feat:: Blog-findAll &amp; testcode">
+      <created>1701269304890</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701269304890</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +311,8 @@
     <MESSAGE value="Feat:: dependency settings" />
     <MESSAGE value="Feat:: dependency &amp; settings" />
     <MESSAGE value="Feat:: Blog-add &amp; testcode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat:: Blog-add &amp; testcode" />
+    <MESSAGE value="Feat:: Blog-findAll &amp; testcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat:: Blog-findAll &amp; testcode" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
