@@ -3,11 +3,15 @@ package me.jeonghwanlee.springbootdeveloper.controller;
 import lombok.RequiredArgsConstructor;
 import me.jeonghwanlee.springbootdeveloper.domain.Article;
 import me.jeonghwanlee.springbootdeveloper.dto.AddArticleRequest;
+import me.jeonghwanlee.springbootdeveloper.dto.ArticleResponse;
 import me.jeonghwanlee.springbootdeveloper.service.BlogService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
@@ -26,5 +30,15 @@ public class BlogApiController {
         Article savedArticle = blogService.save(request);
         return ResponseEntity.status(CREATED)
                 .body(savedArticle);
+    }
+
+    @GetMapping("/api/articles")
+    public ResponseEntity<List<ArticleResponse>> findAllArticles() {
+        List<ArticleResponse> articles = blogService.findAll()
+                .stream()
+                .map(ArticleResponse::new)
+                .toList();
+        return ResponseEntity.ok()
+                .body(articles);
     }
 }
