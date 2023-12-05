@@ -11,6 +11,16 @@ spring:
   h2:
     console:
       enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 884539353015-9oarp5bi3t979genbvuhfv7uj73nv1cf.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - email
+              - profile
 jwt:
   issuer: ajufresh@gmail.com
   secret_key: study-springboot
