@@ -9,6 +9,7 @@ import me.jeonghwanlee.springbootdeveloper.service.BlogService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -58,5 +59,12 @@ public class BlogApiController {
         Article updateArticle = blogService.update(id, request);
         return ResponseEntity.ok()
                 .body(updateArticle);
+    }
+
+    @PostMapping("/api/articles")
+    public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request, Principal principal) {
+        Article savedArticle = blogService.save(request, principal.getName());
+        return ResponseEntity.status(CREATED)
+                .body(savedArticle);
     }
 }
