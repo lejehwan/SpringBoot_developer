@@ -23,14 +23,15 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
-        OAuth2User user = super.loadUser(userRequest);
+        OAuth2User user = super.loadUser(userRequest);// ❶ 요청을 바탕으로 유저 정보를 담은 객체 반환
         saveOrUpdate(user);
         return user;
     }
 
-    // 유저가 있으면 update, 없으면 save
+    // ❷ 유저가 있으면 업데이트, 없으면 유저 생성
     private User saveOrUpdate(OAuth2User oAuth2User) {
         Map<String, Object> attributes = oAuth2User.getAttributes();
+
         String email = (String) attributes.get("email");
         String name = (String) attributes.get("name");
 

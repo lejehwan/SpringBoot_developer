@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -39,42 +40,46 @@ public class WebOAuthSecurityConfig {
     public WebSecurityCustomizer configure() {
         return web -> web.ignoring()
                 .requestMatchers(toH2Console())
-                .requestMatchers("/img/**", "/css/**", "/js/**");
+                .requestMatchers(
+                        new AntPathRequestMatcher("/img/**"),
+                        new AntPathRequestMatcher("/css/**"),
+                        new AntPathRequestMatcher("/js/**")
+                );
     }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(httpSecurityCsrfConfigurer -> httpSecurityCsrfConfigurer.disable())
-                .httpBasic(httpSecurityHttpBasicConfigurer -> httpSecurityHttpBasicConfigurer.disable())
-                .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer.disable())
-                .logout(logoutConfigurer -> logoutConfigurer.disable());
-        http.sessionManagement((session) -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.csrf(AbstractHttpConfigurer::disable)
+                .httpBasic(AbstractHttpConfigurer::disable)
+                .formLogin(AbstractHttpConfigurer::disable)
+                .logout(AbstractHttpConfigurer::disable)
 
-        // 헤더를 확인할 커스텀 필터 추가
-        http.addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
+            .sessionManagement((session) -> session
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
-        // 토큰 재발급 URL은 인증 없이 접근 가능하도록 설정, 나머지 API URL은 인증 필요
-        http.authorizeRequests()
-                .requestMatchers("/api/token").permitAll()
-                .requestMatchers("/api/**").authenticated()
-                .anyRequest().permitAll();
+             // 헤더를 확인할 커스텀 필터 추가
+            .addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
 
-        http.oauth2Login(oAuth2LoginConfigurer -> oAuth2LoginConfigurer
+            // 토큰 재발급 URL은 인증 없이 접근 가능하도록 설정, 나머지 API URL은 인증 필요
+            .authorizeRequests(matchers -> matchers
+                        .requestMatchers(new AntPathRequestMatcher("/api/token")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/**")).authenticated()
+                        .anyRequest().permitAll())
+
+            .oauth2Login(oAuth2LoginConfigurer -> oAuth2LoginConfigurer
                 .loginPage("/login")
                 // Authorization 요청과 관련된 상태 저장
                 .authorizationEndpoint(authorizationEndpointConfig ->
-                        authorizationEndpointConfig.authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository())
-                )
+                        authorizationEndpointConfig.authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository()))
                 .successHandler(oAuth2SuccessHandler())
                 .userInfoEndpoint(userInfoEndpointConfig -> userInfoEndpointConfig.
-                        userService(oAuth2UserCustomService)));
+                        userService(oAuth2UserCustomService)))
 
-        http.logout(logoutConfigurer -> logoutConfigurer
-                .logoutSuccessUrl("/login"));
+            .logout(logoutConfigurer -> logoutConfigurer
+                .logoutSuccessUrl("/login"))
 
-        // /api로 시작하는 url인 경우 401 상태 코드를 반환하도록 예외 처리
-        http.exceptionHandling(httpSecurityExceptionHandlingConfigurer -> httpSecurityExceptionHandlingConfigurer
+            // api로 시작하는 url인 경우 401 상태 코드를 반환하도록 예외 처리
+            .exceptionHandling(httpSecurityExceptionHandlingConfigurer -> httpSecurityExceptionHandlingConfigurer
                 .defaultAuthenticationEntryPointFor(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED), new AntPathRequestMatcher("/api/**")));
 
         return http.build();
