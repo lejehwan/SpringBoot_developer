@@ -1,6 +1,7 @@
 package me.jeonghwanlee.springbootdeveloper.config.oauth;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.jeonghwanlee.springbootdeveloper.domain.User;
 import me.jeonghwanlee.springbootdeveloper.repository.UserRepository;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -17,6 +18,7 @@ import java.util.Map;
  */
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class OAuth2UserCustomService extends DefaultOAuth2UserService {
 
     private final UserRepository userRepository;
@@ -24,6 +26,11 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User user = super.loadUser(userRequest);// ❶ 요청을 바탕으로 유저 정보를 담은 객체 반환
+        Map<String, Object> attributes = user.getAttributes();
+        for (Map.Entry<String, Object> entry : attributes.entrySet()) {
+            log.info("userInfo key {}", entry.getKey());
+            log.info("userInfo value {}", entry.getValue());
+        }
         saveOrUpdate(user);
         return user;
     }
@@ -41,6 +48,7 @@ public class OAuth2UserCustomService extends DefaultOAuth2UserService {
                         .email(email)
                         .nickname(name)
                         .build());
+
         return userRepository.save(user);
     }
 }

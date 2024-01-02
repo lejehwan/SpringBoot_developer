@@ -1,10 +1,9 @@
 package me.jeonghwanlee.springbootdeveloper.config.oauth;
 
-import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import me.jeonghwanlee.springbootdeveloper.config.jwt.TokenProvider;
 import me.jeonghwanlee.springbootdeveloper.domain.RefreshToken;
 import me.jeonghwanlee.springbootdeveloper.domain.User;
@@ -24,6 +23,7 @@ import java.time.Duration;
  * @author jeonghwanlee
  * @date 2023-12-05
  */
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
@@ -39,7 +39,7 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     private final UserService userService;
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException {
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
         User user = userService.findByEmail((String) oAuth2User.getAttributes().get("email"));
 
@@ -54,6 +54,8 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 
         // 인증 관련 설정 값, 쿠키 제거
         clearAuthenticationAttributes(request, response);
+
+        log.info("redirect url: {}", targetUrl);
 
         // 리다이렉트
         getRedirectStrategy().sendRedirect(request, response, targetUrl);
