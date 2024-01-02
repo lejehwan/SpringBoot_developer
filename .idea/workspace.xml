@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Feat:: Blog-findone &amp; testcode">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Fix:: OAuth2 404 Error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2AuthorizationRequestBasedOnCookieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2SuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2SuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2UserCustomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/config/oauth/OAuth2UserCustomService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/me/jeonghwanlee/springbootdeveloper/controller/BlogApiControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/me/jeonghwanlee/springbootdeveloper/controller/BlogApiControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +64,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "lejehwan"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9d50b7b5-9e0e-4dd6-b107-0167998c5a8a" />
+        <option name="url" value="https://github.com/lejehwan/SpringBoot_developer.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -85,9 +94,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.BlogApiControllerTest.executor": "Debug",
+    "Gradle.BlogApiControllerTest.findArticle.executor": "Run",
     "Gradle.Build SpringBoot_developer.executor": "Run",
     "Gradle.SpringBoot_developer [:SpringbootdeveloperApplication.main()].executor": "Run",
     "Gradle.SpringBoot_developer [build].executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'.executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.config.jwt'.executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.controller'.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -124,19 +138,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'">
-    <configuration name="SpringbootdeveloperApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="me.jeonghwanlee.springbootdeveloper.SpringbootdeveloperApplication" />
-      <module name="me.jeonghwanlee.springbootdeveloper.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="me.jeonghwanlee.springbootdeveloper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BlogApiControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -161,7 +162,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BlogApiControllerTest.findAllArticles" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BlogApiControllerTest.findArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +175,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;me.jeonghwanlee.springbootdeveloper.controller.BlogApiControllerTest.findAllArticles&quot;" />
+            <option value="&quot;me.jeonghwanlee.springbootdeveloper.controller.BlogApiControllerTest.findArticle&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,28 +184,6 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SpringBoot_developer [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="Tests in 'me.jeonghwanlee.springbootdeveloper'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -221,6 +200,54 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;me.jeonghwanlee.springbootdeveloper.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'me.jeonghwanlee.springbootdeveloper.config.jwt'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.jeonghwanlee.springbootdeveloper.config.jwt.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'me.jeonghwanlee.springbootdeveloper.controller'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;me.jeonghwanlee.springbootdeveloper.controller.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -268,10 +295,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'" />
-        <item itemvalue="Gradle.SpringBoot_developer [build]" />
-        <item itemvalue="Application.SpringbootdeveloperApplication" />
         <item itemvalue="Gradle.BlogApiControllerTest" />
-        <item itemvalue="Gradle.BlogApiControllerTest.findAllArticles" />
+        <item itemvalue="Gradle.BlogApiControllerTest.findArticle" />
+        <item itemvalue="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.controller'" />
+        <item itemvalue="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.config.jwt'" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +359,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701270605661</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fix:: OAuth2 404 Error">
+      <option name="closed" value="true" />
+      <created>1704204558519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704204558519</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +390,23 @@
     <MESSAGE value="Feat:: Blog-add &amp; testcode" />
     <MESSAGE value="Feat:: Blog-findAll &amp; testcode" />
     <MESSAGE value="Feat:: Blog-findone &amp; testcode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat:: Blog-findone &amp; testcode" />
+    <MESSAGE value="Fix:: OAuth2 404 Error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix:: OAuth2 404 Error" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/me/jeonghwanlee/springbootdeveloper/service/BlogService.java</url>
+          <line>55</line>
+          <properties class="me.jeonghwanlee.springbootdeveloper.service.BlogService" method="authorizeArticleAuthor">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
