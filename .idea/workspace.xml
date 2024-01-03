@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Fix:: BlogService typo &amp; TestCode fix">
+    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Fix:: delete to empty test method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -91,40 +91,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.BlogApiControllerTest.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.BlogApiControllerTest.findArticle.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build SpringBoot_developer.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SpringBoot_developer [:SpringbootdeveloperApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SpringBoot_developer [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.config.jwt'.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.controller'.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ljh/Intellij Project/SpringBoot_developer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;f615a28f782e66955c711297ca4f3da1&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.BlogApiControllerTest.executor": "Debug",
+    "Gradle.BlogApiControllerTest.findArticle.executor": "Run",
+    "Gradle.Build SpringBoot_developer.executor": "Run",
+    "Gradle.SpringBoot_developer [:SpringbootdeveloperApplication.main()].executor": "Run",
+    "Gradle.SpringBoot_developer [build].executor": "Run",
+    "Gradle.SpringBoot_developer [clean].executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'.executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.config.jwt'.executor": "Run",
+    "Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.controller'.executor": "Run",
+    "Gradle.Tests in 'springbootdeveloper.test'.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/ljh/Intellij Project/SpringBoot_developer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "spring.configuration.checksum": "f615a28f782e66955c711297ca4f3da1",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ljh\Intellij Project\study\src\main\resources" />
@@ -161,30 +163,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BlogApiControllerTest.findArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.jeonghwanlee.springbootdeveloper.controller.BlogApiControllerTest.findArticle&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration name="SpringBoot_developer [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,6 +175,28 @@
         <option name="taskNames">
           <list>
             <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringBoot_developer [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -231,7 +231,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'me.jeonghwanlee.springbootdeveloper.controller'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Tests in 'springbootdeveloper.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -243,8 +243,6 @@
         <option name="taskNames">
           <list>
             <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;me.jeonghwanlee.springbootdeveloper.controller.*&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -292,10 +290,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.SpringBoot_developer [build]" />
+        <item itemvalue="Gradle.SpringBoot_developer [clean]" />
+        <item itemvalue="Gradle.Tests in 'springbootdeveloper.test'" />
         <item itemvalue="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper'" />
         <item itemvalue="Gradle.BlogApiControllerTest" />
-        <item itemvalue="Gradle.BlogApiControllerTest.findArticle" />
-        <item itemvalue="Gradle.Tests in 'me.jeonghwanlee.springbootdeveloper.controller'" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +370,31 @@
       <option name="project" value="LOCAL" />
       <updated>1704205675607</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Feat:: CI">
+      <option name="closed" value="true" />
+      <created>1704288104906</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704288104906</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix:: CI">
+      <option name="closed" value="true" />
+      <created>1704288276131</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704288276131</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix:: delete to empty test method">
+      <option name="closed" value="true" />
+      <created>1704288575852</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704288575852</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +419,10 @@
     <MESSAGE value="Feat:: Blog-findone &amp; testcode" />
     <MESSAGE value="Fix:: OAuth2 404 Error" />
     <MESSAGE value="Fix:: BlogService typo &amp; TestCode fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix:: BlogService typo &amp; TestCode fix" />
+    <MESSAGE value="Feat:: CI" />
+    <MESSAGE value="Fix:: CI" />
+    <MESSAGE value="Fix:: delete to empty test method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix:: delete to empty test method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
