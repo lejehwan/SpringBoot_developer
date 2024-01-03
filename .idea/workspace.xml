@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Fix:: application.yml" />
+    <list default="true" id="d7968181-307c-43d6-9e18-b49bb5fa00f9" name="Changes" comment="Fix:: ci.yml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -423,7 +423,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704290745100</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Fix:: ci.yml">
+      <option name="closed" value="true" />
+      <created>1704290919904</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1704290919904</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +462,8 @@
     <MESSAGE value="Fix:: delete to datasource" />
     <MESSAGE value="Feat:: ci.yml &gt; cicd.yml" />
     <MESSAGE value="Fix:: application.yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix:: application.yml" />
+    <MESSAGE value="Fix:: ci.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix:: ci.yml" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
