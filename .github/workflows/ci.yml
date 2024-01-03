@@ -32,6 +32,11 @@ jobs:
          format: YYYY-MM-DDTHH-mm-ss
          utcOffset: "+09:00"
 
+     - name: Set up environment variables
+       run:
+         echo "OAUTH_CLIENT_ID=${{ secrets.OAUTH_CLIENT_ID }}" >> $GITHUB_ENV
+         echo "OAUTH_CLIENT_SECRET=${{ secrets.OAUTH_CLIENT_SECRET }}" >> $GITHUB_ENV
+
      # 배포용 패키지 경로 저장
      - name: Set artifact
        run: echo "artifact=$(ls ./build/libs)" >> $GITHUB_ENV
